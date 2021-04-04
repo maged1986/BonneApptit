@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/_25sdp"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/error_layout_tv_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/error_layout_tv_message"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_error" />
+
+        <Button
+            android:id="@+id/error_layout_btn_all"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/error_layout_btn_all" />
+
+        <Button
+            android:id="@+id/error_layout_btn_categories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/error_layout_btn_categories" />
+    </LinearLayout>
+</layout>

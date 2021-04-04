@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/categoriesFragment"
+        android:icon="@drawable/ic_baseline_category_24"
+        android:title="@string/menu_cat" />
+    <item
+        android:id="@+id/allRecipesFragment"
+        android:icon="@drawable/ic_all"
+        android:title="@string/menu_allrecipes" />
+    <item
+        android:id="@+id/favoriteFragment"
+        android:icon="@drawable/ic_baseline_favorite_border_24"
+        android:title="@string/menu_fav_recipes" />
+</menu>

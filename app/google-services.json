@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "761723032258",
+    "firebase_url": "https://bonne-app-tit.firebaseio.com",
+    "project_id": "bonne-app-tit",
+    "storage_bucket": "bonne-app-tit.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:761723032258:android:a59e01421d0daef9d2e15b",
+        "android_client_info": {
+          "package_name": "com.mego.bonneapptit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "761723032258-c4vm1f8lq7nsoqf7anu4vifk5if6oct8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRCQHkHSD0zzpsci0L6JIpx_2_JNyOPlg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "761723032258-c4vm1f8lq7nsoqf7anu4vifk5if6oct8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

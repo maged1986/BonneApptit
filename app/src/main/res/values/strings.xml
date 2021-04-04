@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Bonne Appétit</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="menu_allrecipes">All Recipes</string>
+    <string name="menu_fav_recipes">Favorite  Recipes</string>
+    <string name="menu_breakfast">Breakfast</string>
+    <string name="menu_barbeque">Barbeque</string>
+    <string name="menu_chicken">Chicken</string>
+    <string name="menu_beef">Beef</string>
+    <string name="menu_brunch">Brunch</string>
+    <string name="menu_dinner">Dinner</string>
+    <string name="menu_wine">Wine</string>
+    <string name="menu_italian">Italian</string>
+    <string name="menu_cat">Categories</string>
+    <string name="error_layout_tv_message">There no match recpies</string>
+    <string name="error_layout_btn_all">All Recipes</string>
+    <string name="error_layout_btn_categories">Categories</string>
+</resources>
