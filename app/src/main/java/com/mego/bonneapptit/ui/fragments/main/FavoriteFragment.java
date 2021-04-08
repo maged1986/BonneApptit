@@ -32,6 +32,7 @@ import dagger.hilt.android.AndroidEntryPoint;
 
 @AndroidEntryPoint
 public class FavoriteFragment extends Fragment {
+    // this Fragment for showing recipes which saved in dp and online dp
  private FragmentFavoriteBinding binding;
  private FavoriteViewModel viewModel;
     private RecipeAdapter adapter;
@@ -46,10 +47,12 @@ public class FavoriteFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        // init RecyclerView and Adapter
         adapter=new RecipeAdapter(getContext());
         viewModel=new ViewModelProvider(getActivity()).get(FavoriteViewModel.class);
         RecyclerView.LayoutManager llm=new LinearLayoutManager(getContext());
         binding.favFragRvRecipes.setLayoutManager(llm);
+        // bring list from view model
         viewModel.getFavList().observe(getViewLifecycleOwner(), new Observer<List<Recipe>>() {
             @Override
             public void onChanged(List<Recipe> recipes) {
@@ -70,6 +73,7 @@ public class FavoriteFragment extends Fragment {
         });
         setupSwipe();
     }
+    // swiping to delet recipe from db
     private void setupSwipe() {
         ItemTouchHelper.SimpleCallback callback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT) {
             @Override

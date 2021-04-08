@@ -32,6 +32,7 @@ import io.reactivex.schedulers.Schedulers;
 
 @AndroidEntryPoint
 public class SplashActivity extends AppCompatActivity {
+    // this class to check auth and netork connection
     private SessionManager sessionManager;
 
 

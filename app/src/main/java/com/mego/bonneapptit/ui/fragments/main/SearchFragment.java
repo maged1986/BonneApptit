@@ -19,9 +19,9 @@ import android.widget.Toast;
 
 import com.mego.bonneapptit.R;
 import com.mego.bonneapptit.adapters.RecipeAdapter;
-import com.mego.bonneapptit.databinding.LayoutErrorBinding;
 import com.mego.bonneapptit.databinding.SearchFragmentBinding;
 import com.mego.bonneapptit.models.Recipe;
+import com.mego.bonneapptit.ui.MainActivity;
 import com.mego.bonneapptit.viewmodels.SearchViewModel;
 
 import java.util.ArrayList;
@@ -36,8 +36,7 @@ public class SearchFragment extends Fragment {
     private String searchItem;
     private RecipeAdapter adapter;
     private SearchFragmentBinding binding;
-    private LayoutErrorBinding errorBinding;
-    private List<Recipe> recipeList= new ArrayList<>();
+    private List<Recipe> recipeList = new ArrayList<>();
 
 
     @Override
@@ -57,7 +56,7 @@ public class SearchFragment extends Fragment {
             args = SearchFragmentArgs.fromBundle(getArguments());
             searchItem = args.getSearchItem();
         }
-
+       if( viewModel.checkNullSearch() == false){
         LinearLayoutManager llm = new LinearLayoutManager(getContext());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         binding.searchFragRvRecipes.setLayoutManager(llm);
@@ -66,11 +65,10 @@ public class SearchFragment extends Fragment {
         viewModel.getRecipes().observe(getViewLifecycleOwner(), new Observer<List<Recipe>>() {
             @Override
             public void onChanged(List<Recipe> recipes) {
-              recipeList=recipes;
+                recipeList = recipes;
             }
         });
-        if(recipeList.size() >=1){
-            adapter.setList(recipeList);
+        adapter.setList(recipeList);
         binding.searchFragRvRecipes.setAdapter(adapter);
         adapter.setOnItemClickListener(new RecipeAdapter.OnItemClickListener() {
             @Override
@@ -81,10 +79,22 @@ public class SearchFragment extends Fragment {
                         navigate(R.id.action_recipeFragment_to_articleFragment, bundle);
             }
         });}else {
-            binding.searchFragRvRecipes.setVisibility(View.GONE);
-            errorBinding.parent.setVisibility(View.VISIBLE);
-        }
+          binding.searchFragRvRecipes.setVisibility(View.GONE);
+          binding.parent.setVisibility(View.VISIBLE);
+          binding.errorLayoutBtnAll.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View v) {
+                  Navigation.findNavController(getActivity(),R.id.mainNavHostFragment).navigate(R.id.allRecipesFragment);
 
+              }
+          });
+          binding.errorLayoutBtnCategories.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View v) {
+                  Navigation.findNavController(getActivity(),R.id.mainNavHostFragment).navigate(R.id.categoriesFragment);
+
+              }
+          });
+       }
     }
-
 }

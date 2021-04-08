@@ -14,6 +14,8 @@ import retrofit2.http.Query;
 import static com.mego.bonneapptit.utils.Constants.BASE_URL;
 
 public interface RecipeApi {
+    // this is api interface
+
     @GET("/api/search")
     io.reactivex.rxjava3.core.Observable<RecipeListResponse> searchRecipes(
             @Query("q") String query,

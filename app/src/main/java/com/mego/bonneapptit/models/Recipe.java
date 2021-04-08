@@ -8,8 +8,11 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import com.google.firebase.firestore.IgnoreExtraProperties;
+
 import java.util.Arrays;
 @Entity(tableName = "recipeTable")
+@IgnoreExtraProperties
 public class Recipe implements Parcelable {
     @PrimaryKey
     @NonNull
@@ -45,8 +48,8 @@ public class Recipe implements Parcelable {
         this.timestamp = timestamp;
     }
 
-    public Recipe() {
-    }
+   /* public Recipe() {
+    }*/
 
     protected Recipe(Parcel in) {
         recipe_id = in.readString();

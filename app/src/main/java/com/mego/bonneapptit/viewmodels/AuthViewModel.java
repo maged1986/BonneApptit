@@ -14,6 +14,7 @@ import java.util.List;
 import io.reactivex.Observable;
 
 public class AuthViewModel extends ViewModel {
+  // this class to login and logout
   private AuthRepository repository;
     @ViewModelInject
     public AuthViewModel(AuthRepository repository) {

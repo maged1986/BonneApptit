@@ -1,6 +1,7 @@
 package com.mego.bonneapptit.viewmodels;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.util.Log;
 
 import androidx.hilt.lifecycle.ViewModelInject;
@@ -18,6 +19,7 @@ import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class ArticleViewModel extends ViewModel {
+    // this calss to bring recipe details
     private MainRepository repository;
     private MutableLiveData<RecipeResponse> MutableLiveData = new MutableLiveData<>();
 
@@ -47,7 +49,9 @@ public class ArticleViewModel extends ViewModel {
     public void insertRecipe(Recipe recipe) {
         repository.insertRecipe(recipe);
     }
-    public void deleteAll( ){repository.deleteAll();}
+    public void uploadAd(Recipe recipe, Context context) {
+        repository.uploadAd(recipe, context);
+    }
 
 }
 

@@ -17,6 +17,7 @@ import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class CategoryRecipesViewModel extends ViewModel {
+    // this class to search for recipe related to Category item
 
     private MainRepository repository;
     private MutableLiveData<List<Recipe>> listMutableLiveData= new MutableLiveData<>();

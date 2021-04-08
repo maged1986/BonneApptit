@@ -20,8 +20,13 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.mego.bonneapptit.R;
 import com.mego.bonneapptit.databinding.FragmentArticleBinding;
+import com.mego.bonneapptit.firebase.Firebase;
+import com.mego.bonneapptit.models.Recipe;
 import com.mego.bonneapptit.models.responses.RecipeResponse;
 import com.mego.bonneapptit.viewmodels.ArticleViewModel;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class ArticleFragment extends Fragment {
@@ -30,7 +35,7 @@ public class ArticleFragment extends Fragment {
     private String recipe_id;
     private ArticleViewModel viewModel;
     private RecipeResponse response;
-
+    String[] ingredients;
 
 
     @Nullable
@@ -60,7 +65,7 @@ public class ArticleFragment extends Fragment {
                 Glide.with(binding.getRoot()).load(recipeResponse.getRecipe().getImage_url())
                         .centerCrop().into(binding.articleFragIvImage);
                 binding.articleFragTvPublisher.setText(recipeResponse.getRecipe().getPublisher());
-                for (String ingredient : recipeResponse.getRecipe().getIngredients()) {
+                    for (String ingredient : recipeResponse.getRecipe().getIngredients()) {
                     TextView textView = new TextView(getContext());
                     textView.setText(ingredient);
                     textView.setTextSize(15);
@@ -74,12 +79,31 @@ public class ArticleFragment extends Fragment {
                 binding.articleFragFabFav.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if(response.getRecipe() != null){
-                        viewModel.insertRecipe(response.getRecipe());
-                        Toast.makeText(getContext(), "done", Toast.LENGTH_LONG).show();}
-                        else {
-                            Toast.makeText(getContext(), " Not done", Toast.LENGTH_LONG).show();}
+                        if (response.getRecipe() != null)
+                            viewModel.insertRecipe(response.getRecipe());
+                        for (int i = 0; i >= response.getRecipe().getIngredients().length; i++) {
+                            ingredients = new String[response.getRecipe().getIngredients().length];
+                            for (String ingredient : recipeResponse.getRecipe().getIngredients()) {
+                                ingredients[i] = ingredient;
+                            }
+                        }
+                        Recipe r = response.getRecipe();
+                        Recipe recipe = new Recipe(r.getRecipe_id(),
+                                r.getTitle()
+                                , r.getPublisher()
+                                , r.getImage_url(),
+                                r.getSocial_rank(),
+                                ingredients
+                                , r.getTimestamp());
+                        viewModel.uploadAd(recipe, getContext());
+
+                        //   Toast.makeText(getContext(), "done", Toast.LENGTH_LONG).show();
+
                     }
+                   /* else{
+                            Toast.makeText(getContext(), " Not done", Toast.LENGTH_LONG).show();
+                        }*/
+
                 });
             }
         });

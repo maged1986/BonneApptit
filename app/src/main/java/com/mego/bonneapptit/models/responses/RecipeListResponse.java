@@ -31,4 +31,7 @@ public class RecipeListResponse {
                 ", recipes=" + recipes +
                 '}';
     }
+
+    public RecipeListResponse() {
+    }
 }

@@ -14,6 +14,7 @@ import static androidx.room.OnConflictStrategy.REPLACE;
 
 @Dao
 public interface RecipeDao {
+    //this is dao interface
     @Insert(onConflict = REPLACE)
     public void insertRecipe(Recipe recipe);
 

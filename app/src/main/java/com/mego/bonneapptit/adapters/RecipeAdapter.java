@@ -17,6 +17,8 @@ import com.mego.bonneapptit.models.Recipe;
 import java.util.ArrayList;
 import java.util.List;
 public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeHolder> {
+    // this class is adapter for recipe list
+
     private  OnItemClickListener listener;
 
     Context context;

@@ -8,6 +8,7 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 
 public class Converter {
+    // this class to convert from recipe artay to string
     @TypeConverter
     public static String[] fromString(String value){
         Type listType = new TypeToken<String[]>(){}.getType();

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.MenuItemCompat;
 import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
@@ -23,6 +24,7 @@ import com.mego.bonneapptit.databinding.ActivityAuthBinding;
 import com.mego.bonneapptit.databinding.ActivityMainBinding;
 import com.mego.bonneapptit.firebase.Firebase;
 import com.mego.bonneapptit.models.Categories;
+import com.mego.bonneapptit.ui.fragments.main.MainViewModel;
 import com.mego.bonneapptit.utils.SessionManager;
 
 import java.util.ArrayList;
@@ -32,8 +34,7 @@ import dagger.hilt.android.AndroidEntryPoint;
 
 @AndroidEntryPoint
 public class MainActivity extends AppCompatActivity {
-   // private SessionManager manager;
-    private Firebase firebase;
+    private MainViewModel viewModel;
     public static void show(Context context) {
         Intent intent = new Intent(context, MainActivity.class);
         context.startActivity(intent);
@@ -45,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        viewModel=new ViewModelProvider(this).get(MainViewModel.class);
+        viewModel.checkSavedRecipes();
 
        NavController navController = Navigation.findNavController(this, R.id.mainNavHostFragment);
         NavigationUI.setupWithNavController(binding.bottomNavigationView, navController);
@@ -80,10 +83,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId()==R.id.op_menu_signout){
-            firebase.signOut(this);
+            viewModel.signOut(this);
             startActivity(new Intent(this,AuthActivity.class));
             return true;
         }
         else return super.onOptionsItemSelected(item);
     }
+
 }

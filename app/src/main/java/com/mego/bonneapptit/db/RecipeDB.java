@@ -9,5 +9,6 @@ import com.mego.bonneapptit.models.Recipe;
 @Database(entities = Recipe.class, version = 2, exportSchema = false)
 @TypeConverters(Converter.class)
 public abstract class RecipeDB extends RoomDatabase {
+    //This is Db class
     public abstract RecipeDao recipeDao();
 }

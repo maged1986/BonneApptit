@@ -62,6 +62,7 @@
         </LinearLayout></ScrollView>
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/article_frag_fab_fav"
+            android:layout_gravity="end|bottom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="true"

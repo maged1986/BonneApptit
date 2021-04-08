@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 public class CategoryAdapter extends ArrayAdapter<Categories> {
-
+// this class is adapter for Categorylist
 
     public CategoryAdapter(@NonNull Context context, ArrayList<Categories> categoryList) {
         super(context, 0,categoryList);

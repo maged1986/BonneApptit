@@ -18,6 +18,8 @@ import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class AllRecipesViewModel extends ViewModel {
+    // this calss to bring allrecipe list
+
     //  public List<Recipe> recipesList = new ArrayList<>();
     private MainRepository repository;
     private MutableLiveData<List<Recipe>> listMutableLiveData = new MutableLiveData<>();

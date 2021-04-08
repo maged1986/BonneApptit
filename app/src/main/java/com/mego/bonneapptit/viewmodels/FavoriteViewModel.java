@@ -14,6 +14,7 @@ import com.mego.bonneapptit.repository.MainRepository;
 import java.util.List;
 
 public class FavoriteViewModel extends ViewModel {
+    // this class to bring data from dp
     private MainRepository repository;
     private LiveData<List<Recipe>> favList;
 
