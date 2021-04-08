@@ -1,4 +1,4 @@
-package com.mego.bonneapptit.ui.fragments.main;
+package com.mego.bonneapptit.viewmodels;
 
 import android.content.Context;
 

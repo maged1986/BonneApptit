@@ -20,14 +20,8 @@ import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.mego.bonneapptit.R;
-import com.mego.bonneapptit.databinding.ActivityAuthBinding;
 import com.mego.bonneapptit.databinding.ActivityMainBinding;
-import com.mego.bonneapptit.firebase.Firebase;
-import com.mego.bonneapptit.models.Categories;
-import com.mego.bonneapptit.ui.fragments.main.MainViewModel;
-import com.mego.bonneapptit.utils.SessionManager;
-
-import java.util.ArrayList;
+import com.mego.bonneapptit.viewmodels.MainViewModel;
 
 import dagger.hilt.android.AndroidEntryPoint;
 
