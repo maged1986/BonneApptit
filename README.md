@@ -3,12 +3,12 @@ It is a comprehensive application for all cooking recipes from all kitchens (Ita
 
 ## Getting Started
 
-This program is originally based on recipesapi which allows recpies from various sources to be presented
-![Screenshot_1617728909](https://user-images.githubusercontent.com/64534412/113950933-d1b40000-9812-11eb-8da8-4ed94d48b9fe.jpg)
-![Screenshot_1617729239](https://user-images.githubusercontent.com/64534412/113950936-d37dc380-9812-11eb-93c3-bfda6b851c3b.jpg)
-![Screenshot_1617729246](https://user-images.githubusercontent.com/64534412/113950944-d5478700-9812-11eb-8dc2-2154fb2b54d6.jpg)
-![Screenshot_1617746594](https://user-images.githubusercontent.com/64534412/113950948-d7114a80-9812-11eb-842e-64cc6ddb8a9b.jpg)
-![Screenshot_1617728890](https://user-images.githubusercontent.com/64534412/113950951-d8427780-9812-11eb-850b-354564b8fc37.jpg)
+This program is originally based on recipesapi which allows recpies from various sources to be presented![Screenshot_1623697679](https://user-images.githubusercontent.com/64534412/122489822-cdf5e400-cfe0-11eb-8090-f46f70eed708.png)
+![Screenshot_1623697656](https://user-images.githubusercontent.com/64534412/122489910-fe3d8280-cfe0-11eb-9a72-08ed4219f0f8.png)
+![Screenshot_1623697675](https://user-images.githubusercontent.com/64534412/122489913-ff6eaf80-cfe0-11eb-8956-5b696af6ba7c.png)
+![Screenshot_1623697679](https://user-images.githubusercontent.com/64534412/122489916-01387300-cfe1-11eb-971b-6076682d9d65.png)
+![Screenshot_1623697647](https://user-images.githubusercontent.com/64534412/122489917-01387300-cfe1-11eb-97e0-359a323b7baa.png)
+
 
 ## Built With
 * RestfulAPI(Retrofit,Http)
